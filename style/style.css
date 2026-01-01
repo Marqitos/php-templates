@@ -77,11 +77,6 @@ a img {
     background: url(/img/btn-download.gif) no-repeat 0 0;
 }
 
-/* lower than IE8 */
-.lte8 .downloads .download a {
-    display: block;
-}
-
 .downloads .download a:hover {
     background-position: 0 -32px;
 }
