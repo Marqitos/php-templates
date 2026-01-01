@@ -1,4 +1,4 @@
-# No javascript - TSUE version
+# No javascript - BROWSE HAPPY version
 
 HTML only template based on [BROWSE HAPPY](https://browsehappy.com/)
 
