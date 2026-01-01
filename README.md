@@ -15,19 +15,19 @@ HTML only template based on TSUE noJavascript template
 
 - FullHD
 
-![FullHD](https://github.com/Marqitos/php-templates/blob/TSUE-noJavascript/doc/full-hd.png?raw=true)
+![FullHD](https://github.com/Marqitos/php-templates/blob/html/TSUE-noJavascript/doc/full-hd.png?raw=true)
 
 - HD
 
-![FullHD](https://github.com/Marqitos/php-templates/blob/TSUE-noJavascript/doc/hd.png?raw=true)
+![FullHD](https://github.com/Marqitos/php-templates/blob/html/TSUE-noJavascript/doc/hd.png?raw=true)
 
 - Mobile
 
-![FullHD](https://github.com/Marqitos/php-templates/blob/TSUE-noJavascript/doc/mobile.png?raw=true)
+![FullHD](https://github.com/Marqitos/php-templates/blob/html/TSUE-noJavascript/doc/mobile.png?raw=true)
 
 - Small mobile
 
-![FullHD](https://github.com/Marqitos/php-templates/blob/TSUE-noJavascript/doc/small-mobile.png?raw=true)
+![FullHD](https://github.com/Marqitos/php-templates/blob/html/TSUE-noJavascript/doc/small-mobile.png?raw=true)
 
 ## TO-DO
 
