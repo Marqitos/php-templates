@@ -339,7 +339,7 @@ html[dir="rtl"] #browserlist li {
 	width: 125px;
 	height: 135px;
 	margin: 20px auto;
-	background-image: url(/img/browsehappy-sprite.png);
+	background-image: url(/img/sprite.png);
 	background-repeat: no-repeat;
 }
 
@@ -623,7 +623,7 @@ footer {
        only screen and (min-resolution: 1.5dppx),
        only screen and (min-resolution: 144dpi) {
 	#browserlist li .icon, #share nav li a {
-		background-image: url(/img/browsehappy-sprite-2x.png);
+		background-image: url(/img/sprite-2x.png);
 		background-repeat: no-repeat;
 		background-size: 875px 170px;
 	}
