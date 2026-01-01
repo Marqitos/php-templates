@@ -11,11 +11,12 @@ templates/
     │   ├── *.(php|html)
     │   └── js
     │       └── *.(php/js)
-    └── assets
-        ├── css
-        │   └── *.(css)
-        ├── img
-        │   └── *.(png|jpg|svg|*)
-        └── js
-            └── *.(js)
+    ├── assets
+    │   ├── css
+    │   │   └── *.(css)
+    │   ├── img
+    │   │   └── *.(png|jpg|svg|*)
+    │   └── js
+    │       └── *.(js)
+    └── README.md
 ```
