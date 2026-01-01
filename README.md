@@ -1,3 +1,3 @@
-# Templates
+# No javascript - TSUE versión
 
-Several templates for use with PHP-Bootstrap
+HTML only template based on TSUE noJavascript template
