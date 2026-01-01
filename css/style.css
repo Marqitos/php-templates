@@ -57,6 +57,58 @@ h1, h2 {
 	text-shadow: none;
 }
 
+/* Font faces */
+@font-face{
+    font-family:league-gothic;
+    src:url(/fonts/league-gothic-regular-w400.woff2) format("woff2"),
+        url(/fonts/league-gothic-regular-w400.woff) format("woff"),
+        url(/fonts/league-gothic-regular-w400.otf) format("opentype");
+    font-weight:400;
+    font-style:normal;
+    font-stretch:normal;
+    font-display:auto;
+}
+@font-face{
+    font-family:lemonde-courrier;
+    src:url(/fonts/lemonde-courrier-regular-w400.woff2) format("woff2"),
+        url(/fonts/lemonde-courrier-regular-w400.woff) format("woff"),
+        url(/fonts/lemonde-courrier-regular-w400.otf) format("opentype");
+    font-weight:400;
+    font-style:normal;
+    font-stretch:normal;
+    font-display:auto;
+}
+@font-face{
+    font-family:lemonde-courrier;
+    src:url(/fonts/lemonde-courrier-italic-w400.woff2) format("woff2"),
+        url(/fonts/lemonde-courrier-italic-w400.woff) format("woff"),
+        url(/fonts/lemonde-courrier-italic-w400.otf) format("opentype");
+    font-weight:400;
+    font-style:italic;
+    font-stretch:normal;
+    font-display:auto;
+}
+@font-face{
+    font-family:lemonde-courrier;
+    src:url(/fonts/lemonde-courrier-regular-w700.woff2) format("woff2"),
+        url(/fonts/lemonde-courrier-regular-w700.woff) format("woff"),
+        url(/fonts/lemonde-courrier-regular-w700.otf) format("opentype");
+    font-weight:700;
+    font-style:normal;
+    font-stretch:normal;
+    font-display:auto;
+}
+@font-face{
+    font-family:lemonde-courrier;
+    src:url(/fonts/lemonde-courrier-italic-w700.woff2) format("woff2"),
+        url(/fonts/lemonde-courrier-italic-w700.woff) format("woff"),
+        url(/fonts/lemonde-courrier-italic-w700.otf) format("opentype");
+    font-weight:700;
+    font-style:italic;
+    font-stretch:normal;
+    font-display:auto;
+}
+
 /* Generic Stuff */
 
 body {
