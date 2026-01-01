@@ -1,22 +1,14 @@
-# Templates
+# No javascript - TSUE version
 
-Several templates for use with PHP-Bootstrap
+HTML only template based on [BROWSE HAPPY](https://browsehappy.com/)
 
-## Template structure
+## Features
 
-```text
-templates/
-└── [template-name] []
-    ├── layout
-    │   ├── *.(php|html)
-    │   └── js
-    │       └── *.(php/js)
-    ├── assets
-    │   ├── css
-    │   │   └── *.(css)
-    │   ├── img
-    │   │   └── *.(png|jpg|svg|*)
-    │   └── js
-    │       └── *.(js)
-    └── README.md
-```
+- Pure HTML template
+- Responsive
+- Languages:
+  - en
+
+## TO-DO
+
+- Optimize images
