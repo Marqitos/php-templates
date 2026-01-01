@@ -2,7 +2,12 @@
 
 Several templates for use with PHP-Bootstrap
 
-## Template structure
+## Template list
+
+- `noJavascript-TSUE` [No javascript - TSUE version](https://github.com/Marqitos/php-templates/blob/main/templates/noJavascript-TSUE/README.md)
+![FullHD](https://github.com/Marqitos/php-templates/blob/html/TSUE-noJavascript/doc/full-hd.png?raw=true)
+
+## Templates structure
 
 ```text
 templates/
