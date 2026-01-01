@@ -1,0 +1,9 @@
+# Auto detect text files and perform LF
+* text=auto eol=lf
+
+# Release excludes
+/.gitignore             export-ignore
+/.gitattributes         export-ignore
+/.markdownlint.json     export-ignore
+/.github/               export-ignore
+/docs/                  export-ignore
