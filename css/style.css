@@ -12,7 +12,7 @@ h1 {
     color: #fff;
 }
 
-h3 {
+h2 {
     font-size: 16px;
     color: #ffc20e;
 }
@@ -54,12 +54,12 @@ a img {
     zoom: 1;
 }
 
-.downloads .download h6,
+.downloads .download h3,
 .downloads .download p {
     text-align: center;
 }
 
-.downloads .download h6 {
+.downloads .download h3 {
     font-size: 20px;
     font-weight: normal;
     margin: 0 0 10px 0;
