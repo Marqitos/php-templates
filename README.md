@@ -1,32 +1,29 @@
-# No javascript - BROWSE HAPPY version
+# Templates
 
-HTML only template based on [BROWSE HAPPY](https://browsehappy.com/)
+Several templates for use with PHP-Bootstrap
 
-## Features
+## Template list
 
-- Pure HTML template
-- Responsive
-- Languages:
-  - en
-
-## Screenshots
-
-- FullHD
-
+- `noJavascript-TSUE` [No javascript - TSUE version](https://github.com/Marqitos/php-templates/blob/main/templates/noJavascript-TSUE/README.md)
+![FullHD](https://github.com/Marqitos/php-templates/blob/html/TSUE-noJavascript/doc/full-hd.png?raw=true)
+- `noJavascript-BROWSEHAPPY` [No javascript - BROWSE HAPPY version](https://github.com/Marqitos/php-templates/blob/main/templates/noJavascript-TSUE/README.md)
 ![FullHD](https://github.com/Marqitos/php-templates/blob/html/BrowseHappy-noJavascript/doc/full-hd.png?raw=true)
 
-- HD
+## Templates structure
 
-![FullHD](https://github.com/Marqitos/php-templates/blob/html/BrowseHappy-noJavascript/doc/hd.png?raw=true)
-
-- Mobile
-
-![FullHD](https://github.com/Marqitos/php-templates/blob/html/BrowseHappy-noJavascript/doc/mobile.png?raw=true)
-
-- Small mobile
-
-![FullHD](https://github.com/Marqitos/php-templates/blob/html/BrowseHappy-noJavascript/doc/small-mobile.png?raw=true)
-
-## TO-DO
-
-- Optimize images
+```text
+templates/
+└── [template-name] []
+    ├── layout
+    │   ├── *.(php|html)
+    │   └── js
+    │       └── *.(php/js)
+    ├── assets
+    │   ├── css
+    │   │   └── *.(css)
+    │   ├── img
+    │   │   └── *.(png|jpg|svg|*)
+    │   └── js
+    │       └── *.(js)
+    └── README.md
+```
