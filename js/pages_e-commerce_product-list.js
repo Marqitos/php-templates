@@ -9,7 +9,7 @@ $(function() {
   };
 
   $('#product-list').dataTable({
-    ajax: 'assets/json/pages_e-commerce_product-list.json',
+    ajax: '/json/pages_e-commerce_product-list.json',
     "columns": [
       { "data": "1" },
       { "data": "2" },
@@ -35,7 +35,7 @@ $(function() {
 
       $('td', row).eq(0).html('').append(
         '<div class="media align-items-center">' +
-          '<img class="ui-w-40 d-block" src="assets/img/uikit/' + data[0] + '" alt="">' +
+          '<img class="ui-w-40 d-block" src="/img/uikit/' + data[0] + '" alt="">' +
           '<a href="javascript:void(0)" class="media-body d-block text-body ml-3">' + data[1] + '</a>' +
         '</div>'
       );

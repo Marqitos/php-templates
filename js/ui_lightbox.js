@@ -25,11 +25,11 @@ $(function() {
 
   // Carousel
   window.blueimpGallery([
-    'assets/img/bg/9.jpg',
-    'assets/img/bg/10.jpg',
-    'assets/img/bg/11.jpg',
-    'assets/img/bg/12.jpg',
-    'assets/img/bg/13.jpg',
+    '/img/bg/9.jpg',
+    '/img/bg/10.jpg',
+    '/img/bg/11.jpg',
+    '/img/bg/12.jpg',
+    '/img/bg/13.jpg',
   ], {
     container: '#blueimp-carousel-example',
     carousel: true

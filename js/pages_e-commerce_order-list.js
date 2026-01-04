@@ -10,7 +10,7 @@ $(function() {
   };
 
   $('#order-list').dataTable({
-    ajax: 'assets/json/pages_e-commerce_order-list.json',
+    ajax: '/json/pages_e-commerce_order-list.json',
     order: [[ 0, 'desc' ]],
     columnDefs: [ {
       targets: [5],

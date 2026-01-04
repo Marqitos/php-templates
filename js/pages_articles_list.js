@@ -7,7 +7,7 @@ $(function() {
   };
 
   $('#article-list').dataTable({
-    ajax: 'assets/json/pages_articles_list.json',
+    ajax: '/json/pages_articles_list.json',
     columnDefs: [ {
       targets: [6],
       orderable: false,

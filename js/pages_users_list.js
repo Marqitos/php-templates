@@ -16,7 +16,7 @@ $(function() {
   };
 
   $('#user-list').dataTable({
-    ajax: 'assets/json/pages_users_list.json',
+    ajax: '/json/pages_users_list.json',
     columnDefs: [ {
       targets: [8],
       orderable: false,

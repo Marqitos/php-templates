@@ -1,7 +1,7 @@
 $(function() {
 
   $('#tickets-list').dataTable({
-    ajax: 'assets/json/pages_tickets_list.json',
+    ajax: '/json/pages_tickets_list.json',
     columnDefs: [ {
       targets: [6],
       orderable: false,

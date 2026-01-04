@@ -1,11 +1,11 @@
 $(function() {
   $('#vegas-example').vegas({
     slides: [
-      { src: "assets/img/bg/1.jpg" },
-      { src: "assets/img/bg/2.jpg" },
-      { src: "assets/img/bg/3.jpg" },
-      { src: "assets/img/bg/4.jpg" },
-      { src: "assets/img/bg/5.jpg" }
+      { src: "/img/bg/1.jpg" },
+      { src: "/img/bg/2.jpg" },
+      { src: "/img/bg/3.jpg" },
+      { src: "/img/bg/4.jpg" },
+      { src: "/img/bg/5.jpg" }
     ],
     transition: [ 'fade', 'zoomOut', 'zoomIn', 'blur' ],
     animation: [ 'kenburnsUp', 'kenburnsDown', 'kenburnsLeft', 'kenburnsRight' ]
@@ -20,11 +20,11 @@ $(function() {
     timer: false,
     shuffle: true,
     slides: [
-      { src: "assets/img/bg/1.jpg" },
-      { src: "assets/img/bg/2.jpg" },
-      { src: "assets/img/bg/3.jpg" },
-      { src: "assets/img/bg/4.jpg" },
-      { src: "assets/img/bg/5.jpg" }
+      { src: "/img/bg/1.jpg" },
+      { src: "/img/bg/2.jpg" },
+      { src: "/img/bg/3.jpg" },
+      { src: "/img/bg/4.jpg" },
+      { src: "/img/bg/5.jpg" }
     ],
     transition: [ 'fade', 'blur' ],
   });
@@ -35,11 +35,11 @@ $(function() {
     timer: false,
     shuffle: true,
     slides: [
-      { src: "assets/img/bg/1.jpg" },
-      { src: "assets/img/bg/2.jpg" },
-      { src: "assets/img/bg/3.jpg" },
-      { src: "assets/img/bg/4.jpg" },
-      { src: "assets/img/bg/5.jpg" }
+      { src: "/img/bg/1.jpg" },
+      { src: "/img/bg/2.jpg" },
+      { src: "/img/bg/3.jpg" },
+      { src: "/img/bg/4.jpg" },
+      { src: "/img/bg/5.jpg" }
     ],
     transition: [ 'fade', 'blur' ],
   });
