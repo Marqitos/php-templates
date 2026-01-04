@@ -2,18 +2,18 @@
 
 Required plugins:
 
-- Anima Toolkit - https://www.animaapp.com/
+- [Anima Toolkit](https://www.animaapp.com/)
 
 Required fonts:
 
-- Roboto - https://fonts.google.com/specimen/Roboto
+- [Roboto](https://fonts.google.com/specimen/Roboto)
 
 Recommended plugins:
 
-- Runner - https://sketchrunner.com/
-- Butter - https://github.com/pberrecloth/butter-sketch-plugin
-- Rename It - https://github.com/rodi01/RenameIt
-- Automate Sketch - https://github.com/Ashung/Automate-Sketch
+- [Runner](https://sketchrunner.com/)
+- [Butter](https://github.com/pberrecloth/butter-sketch-plugin)
+- [Rename It](https://github.com/rodi01/RenameIt)
+- [Automate Sketch](https://github.com/Ashung/Automate-Sketch)
 
 ## Getting started
 
