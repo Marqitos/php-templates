@@ -8,7 +8,14 @@ this is the perfect solution for a huge variety of markets and business types.
 
 ## Package contents
 
-https://wrapbootstrap.com/theme/appwork-bootstrap-4-template-ui-kit-WB0C668T3
+- ~~[Broken link](https://wrapbootstrap.com/theme/appwork-bootstrap-4-template-ui-kit-WB0C668T3)~~
+- [Web archive (WrapBootstrap: Appwork - Bootstrap 4 Template + UI Kit)](https://web.archive.org/web/20230127002129/https://wrapbootstrap.com/theme/appwork-bootstrap-4-template-ui-kit-WB0C668T3)
+- [GitHub repository](https://github.com/EliteDevSolution/appwork-v140-html-only)
+
+## Requirements
+
+- node v10.16.3
+  - npm v6.9.0
 
 ## Versions
 
