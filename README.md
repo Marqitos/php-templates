@@ -12,6 +12,8 @@ this is the perfect solution for a huge variety of markets and business types.
 - [Web archive (WrapBootstrap: Appwork - Bootstrap 4 Template + UI Kit)](https://web.archive.org/web/20230127002129/https://wrapbootstrap.com/theme/appwork-bootstrap-4-template-ui-kit-WB0C668T3)
 - [GitHub repository](https://github.com/EliteDevSolution/appwork-v140-html-only)
 
+![Web archive](https://github.com/Marqitos/php-templates/blob/js/AppWork-v1.4.0-gulp/doc/web-archive.png?raw=true)
+
 ## Requirements
 
 - node v10.16.3
@@ -21,6 +23,10 @@ this is the perfect solution for a huge variety of markets and business types.
 
 - Bootstrap - 4.4.*
 - Laravel - 7.0.*
+
+## Screenshot
+
+![FullHD](https://github.com/Marqitos/php-templates/blob/js/AppWork-v1.4.0-gulp/doc/full-hd.png?raw=true)
 
 ### Features
 
