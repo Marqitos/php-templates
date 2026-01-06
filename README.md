@@ -8,6 +8,8 @@ Several templates for use with PHP-Bootstrap
 ![FullHD](https://github.com/Marqitos/php-templates/blob/html/TSUE-noJavascript/doc/full-hd.png?raw=true)
 - `noJavascript-BROWSEHAPPY` [No javascript - BROWSE HAPPY version](https://github.com/Marqitos/php-templates/blob/main/templates/noJavascript-TSUE/README.md)
 ![FullHD](https://github.com/Marqitos/php-templates/blob/html/BrowseHappy-noJavascript/doc/full-hd.png?raw=true)
+- `AppWork-v1.4.0` [AppWork v1.4.0](https://github.com/Marqitos/php-templates/blob/main/templates/AppWork-v1.4.0/README.md)
+![FullHD](https://github.com/Marqitos/php-templates/blob/js/AppWork-v1.4.0-gulp/doc/full-hd.png?raw=true)
 
 ## Templates structure
 
