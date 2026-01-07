@@ -16,6 +16,7 @@ declare(strict_types=1);
 namespace Rodas\Scaffold\Layout;
 
 use Rodas\System\Collections\KeyNotFoundException;
+
 use function array_reverse;
 use function call_user_func;
 use function crc32;
@@ -79,12 +80,12 @@ abstract class Javascript {
         }
     }
 
-    public static function write(...$scripts) {
-        $parts = array_merge(...$scripts);
+    public static function write(...$scripts): string {
+        //$parts = array_merge(...$scripts);
         $fingerprint = '';
 
         // Write the scripts
-        foreach ($parts as &$part) {
+        foreach ($scripts as &$part) {
             if (! isset($part[static::CRC_32])) {
                 $part[static::CRC_32] = crc32($part[static::SCRIPT]);
             }
@@ -111,7 +112,7 @@ if ('scripts' in window) {
 
         <?php
         echo ob_get_clean();
-
+        return $fingerprint;
     }
 
     public static function setFingerprint(string $fingerprint) : void {
