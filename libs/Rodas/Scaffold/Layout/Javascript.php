@@ -23,84 +23,85 @@ use function is_callable;
 
 abstract class Javascript {
 
-  public const SCRIPT = 'script';
-  public const DEPENDENCIES = 'dependencies';
-  public const CRC_32 = 'crc';
-  protected $scripts = [];
-  public static $hashs = [];
+    public const SCRIPT = 'script';
+    public const DEPENDENCIES = 'dependencies';
+    public const CRC_32 = 'crc';
+    protected $scripts = [];
+    public static $hashList = [];
 
-  protected function resolveDependencies(array $script, array &$list) : void {
-    if (isset($script[self::DEPENDENCIES])) {
-      $dependencies = $script[self::DEPENDENCIES];
-      foreach($dependencies as $callable) {
-        // Comprobamos si el script ya está en la lista, lo mueve al principio
+    protected function resolveDependencies(array $script, array &$list): void {
+        if (isset($script[static::DEPENDENCIES])) {
+            $dependencies = $script[static::DEPENDENCIES];
+            foreach ($dependencies as $callable) {
+                // Check if the script is already in the list, move it to the beginning
+                $name = '';
+                if (! is_callable($callable, false, $name)) {
+                    require_once 'Rodas/System/Collections/KeyNotFoundException.php';
+                    throw new KeyNotFoundException($name);
+                }
+                if (isset($list[$name])) {
+                    $dependency = $list[$name];
+                    unset($list[$name]);
+                    $list = array_reverse($list, true);
+                    $list[$name] = $dependency;
+                    $list = array_reverse($list, true);
+                }
+
+                // Load the script if necessary
+                if (! isset($this->scripts[$name])) {
+                    $this->loadScript($callable);
+                }
+                $dependency = $this->scripts[$name];
+
+                // Check if it has dependencies
+                $this->resolveDependencies($dependency, $list);
+
+                // Insert the new element at the beginning
+                $list = array_reverse($list, true);
+                $list[$name] = $dependency;
+                $list = array_reverse($list, true);
+            }
+        }
+    }
+
+    protected function loadScript(callable $callable): void {
         $name = '';
-        if (! is_callable($callable, false, $name)) {
-          require_once 'Rodas/System/Collections/KeyNotFoundException.php';
-          throw new KeyNotFoundException($name);
+        if (is_callable($callable, false, $name)) {
+            $this->scripts[$name] = call_user_func($callable);
+            if (isset($this->scripts[$name][static::SCRIPT]) &&
+                ! isset($this->scripts[$name][static::CRC_32])) {
+
+                $this->scripts[$name][static::CRC_32] = crc32($this->scripts[$name][static::SCRIPT]);
+            }
+        } else {
+            require_once 'System/Collections/KeyNotFoundException.php';
+            throw new KeyNotFoundException($name);
         }
-        if (isset($list[$name])) {
-          $dependency = $list[$name];
-          unset($list[$name]);
-          $list = array_reverse($list, true);
-          $list[$name] = $dependency;
-          $list = array_reverse($list, true);
-        }
-
-        // Cargamos el script si es necesario
-        if (! isset($this->scripts[$name])) {
-          $this->loadScript($callable);
-        }
-        $dependency = $this->scripts[$name];
-
-        // Comprobamos si tiene dependencias
-        $this->resolveDependencies($dependency, $list);
-
-        // Insertamos el nuevo elemento al principio
-        $list = array_reverse($list, true);
-        $list[$name] = $dependency;
-        $list = array_reverse($list, true);
-      }
-    }
-  }
-
-  protected function loadScript(callable $callable) : void {
-    $name = '';
-    if (is_callable($callable, false, $name)) {
-      $this->scripts[$name] = call_user_func($callable);
-      if (isset($this->scripts[$name][self::SCRIPT]) &&
-          !isset($this->scripts[$name][self::CRC_32])) {
-        $this->scripts[$name][self::CRC_32] = crc32($this->scripts[$name][self::SCRIPT]);
-      }
-    } else {
-      require_once 'System/Collections/KeyNotFoundException.php';
-      throw new KeyNotFoundException($name);
-    }
-  }
-
-  public static function write(...$scripts) {
-    $parts = array_merge(...$scripts);
-    $fingerprint = '';
-
-    // Escribimos los scripts
-    foreach ($parts as &$part) {
-      if (! isset($part[self::CRC_32])) {
-        $part[self::CRC_32] = crc32($part[self::SCRIPT]);
-      }
-
-      // Omitimos los que están en la lista
-      if (in_array($part[self::CRC_32], self::$hashs)) {
-        continue;
-      }
-
-      // Creamos la lista
-      $fingerprint .= sprintf('%s08', dechex($part[self::CRC_32]));
-
-      echo $part[self::SCRIPT];
     }
 
-    // Escribimos el fingerprint
-    ob_start(); ?>
+    public static function write(...$scripts) {
+        $parts = array_merge(...$scripts);
+        $fingerprint = '';
+
+        // Write the scripts
+        foreach ($parts as &$part) {
+            if (! isset($part[static::CRC_32])) {
+                $part[static::CRC_32] = crc32($part[static::SCRIPT]);
+            }
+
+            // Skip those that are in the list
+            if (in_array($part[static::CRC_32], static::$hashList)) {
+                continue;
+            }
+
+            // Create the list
+            $fingerprint .= sprintf('%s08', dechex($part[static::CRC_32]));
+
+            echo $part[static::SCRIPT];
+        }
+
+        // Write the fingerprint
+        ob_start(); ?>
 
 if ('scripts' in window) {
   window.scripts += '<?= $fingerprint ?>';
@@ -108,21 +109,41 @@ if ('scripts' in window) {
   window.scripts = '<?= $fingerprint ?>';
 }
 
-    <?php
-    echo ob_get_clean();
+        <?php
+        echo ob_get_clean();
 
-  }
-
-  public static function setFingerprint(string $fingerprint) : void {
-    while (strlen($fingerprint) >= 8) {
-      $hash = substr($fingerprint, 0, 8);
-      self::$hashs[] = hexdec($hash);
-      $fingerprint = substr($fingerprint, 8);
     }
-  }
+
+    public static function setFingerprint(string $fingerprint) : void {
+        while (strlen($fingerprint) >= 8) {
+            $hash = substr($fingerprint, 0, 8);
+            static::$hashList[] = hexdec($hash);
+            $fingerprint = substr($fingerprint, 8);
+        }
+    }
+
+    public function __get(string $name) : array {
+        $callable_name = null;
+        if (! is_callable([static::class, $name], false, $callable_name)) {
+            require_once 'Rodas/System/Collections/KeyNotFoundException.php';
+            throw new KeyNotFoundException($name);
+        }
+        // Load the script if necessary
+        if (! isset($this->scripts[$callable_name])) {
+            $this->loadScript([static::class, $name]);
+        }
+
+        // Create the script list
+        $scripts[$callable_name] = $this->scripts[$callable_name];
+
+        // Check if it has dependencies
+        $this->resolveDependencies($this->scripts[$callable_name], $scripts);
+
+        return $scripts;
+    }
 
 }
 
 if (! isset($javascript)) {
-  $javascript = [];
+    $javascript = [];
 }
