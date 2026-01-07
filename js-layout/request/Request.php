@@ -37,7 +37,7 @@ class Request extends Javascript {
 
     # Scripts JavaScript
     public static function checkToken() : array {
-        require_once __DIR__ . '/token.php';
+        require_once __DIR__ . '/Token.php';
         return [
             self::SCRIPT => file_get_contents(__DIR__ . '/checkToken.js'),
             self::DEPENDENCIES  => [
@@ -66,7 +66,7 @@ class Request extends Javascript {
         ob_start();
         include 'renewToken.js.php';
         $script = ob_get_clean();
-        require_once __DIR__ . '/token.php';
+        require_once __DIR__ . '/Token.php';
         return [
             self::SCRIPT => $script,
             self::DEPENDENCIES  => [
@@ -79,7 +79,7 @@ class Request extends Javascript {
         ob_start();
         include 'requestAuthDelete.js.php';
         $script = ob_get_clean();
-        require_once __DIR__ . '/token.php';
+        require_once __DIR__ . '/Token.php';
         return [
             self::SCRIPT => $script,
             self::DEPENDENCIES  => [
@@ -94,7 +94,7 @@ class Request extends Javascript {
         ob_start();
         include 'requestAuthGet.js.php';
         $script = ob_get_clean();
-        require_once __DIR__ . '/token.php';
+        require_once __DIR__ . '/Token.php';
         return [
             self::SCRIPT => $script,
             self::DEPENDENCIES  => [
@@ -109,7 +109,7 @@ class Request extends Javascript {
         ob_start();
         include 'requestAuthPost.js.php';
         $script = ob_get_clean();
-        require_once __DIR__ . '/token.php';
+        require_once __DIR__ . '/Token.php';
         return [
             self::SCRIPT => $script,
             self::DEPENDENCIES  => [
